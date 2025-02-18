@@ -1,0 +1,23 @@
+package com.nttdata.tasks;
+
+import com.nttdata.ui.ProductosPagina;
+import net.serenitybdd.core.steps.Instrumented;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.actions.Click;
+import com.nttdata.ui.ProductosPagina;
+
+public class AgregarProductos implements Task {
+
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        actor.attemptsTo(
+                Click.on(ProductosPagina.CAMISETA),
+                Click.on(ProductosPagina.CHAQUETA)
+        );
+    }
+
+    public static AgregarProductos toCart() {
+        return Instrumented.instanceOf(AgregarProductos.class).withProperties();
+    }
+}
