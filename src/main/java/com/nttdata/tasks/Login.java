@@ -15,13 +15,14 @@ public class Login implements Task {
     public Login(String username, String password) {
         this.username = username;
         this.password = password;
+
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(username).into(LoginPagina.USERNAME_FIELD),
-                Enter.theValue(password).into(LoginPagina.PASSWORD_FIELD),
+                Enter.theValue(this.username).into(LoginPagina.USERNAME_FIELD),
+                Enter.theValue(this.password).into(LoginPagina.PASSWORD_FIELD),
                 Click.on(LoginPagina.LOGIN_BUTTON)
         );
     }

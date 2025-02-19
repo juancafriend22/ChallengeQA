@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         features = "src/test/resources/features/shop.feature",
-        glue = "com/nttdata/stepdefinition",
+        glue = "com.nttdata.stepdefinition",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@EscenarioPrincipal",
+        tags = "@InicioSesionExitoso",
         plugin = {
                 "pretty",
                 "json:target/serenity-reports/web_applications/login/cucumber.json",

@@ -36,70 +36,19 @@ public class AgregarProdStep {
     }
     private Actor cliente = Actor.named("Cliente");
 
-    @Given("Usuario esta en la pagina de logueo")
-    public void usuarioEnPaginaLogueo() {
+
+    @Given("que el usuario navega a la página de inicio de sesion")
+    public void queElUsuarioNavegaALaPáginaDeInicioDeSesion() {
         cliente.can(BrowseTheWeb.with(driver));
         cliente.wasAbleTo(Navegacion.theSauceDemoPage());
     }
-
-    @When("El usuario tipea su username en el campo {string}")
-    public void ingresarUsername(String username) {
-        this.username = username;
+    @When("Ingresa las credenciales de acceso correctas")
+    public void ingresaLasCredencialesDeAccesoCorrectas() {
+        cliente.attemptsTo(Login.withCredentials("standard_user", "secret_sauce"));
     }
-
-    @When("El usuario tipea su contrasena en el campo {string}")
-    public void ingresarPassword(String password) {
-        cliente.attemptsTo(Login.withCredentials(username, password));
+    @Then("deberia ver el catalogo de productos")
+    public void deberiaVerElCatalogoDeProductos() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
-
-    private String username;
-
-    @When("El usuario presiona el boton login")
-    public void clickLogin() {
-        // Login ya realizado en el paso anterior
-    }
-
-    @Then("El usuario visualiza la pagina de productos disponibles")
-    public void verificarPaginaProductos() {
-        cliente.should(
-                Ensure.that(ProductosPaginaVisibles.value()).isTrue().toString()
-        );
-    }
-
-    @When("El usuario agrega productos al carrito")
-    public void agregarProductos() {
-        cliente.attemptsTo(AgregarProductos.toCart());
-    }
-
-    @When("El usuario va ver el carrito")
-    public void irAlCarrito() {
-        cliente.attemptsTo(Click.on(ProductosPagina.CART_LINK));
-    }
-
-    @Then("El usuario visualiza su lista de productos comprados")
-    public void verificarListaProductos() {
-        cliente.should(
-                Ensure.that(CarritoPagina.CART_LIST).isDisplayed().toString()
-        );
-    }
-
-    @When("El usuario confirma su compra presionando el boton checkout")
-    public void clickCheckout() {
-        cliente.attemptsTo(Click.on(CarritoPagina.CHECKOUT_BUTTON));
-    }
-
-    @When("Ingresa sus datos de compra {string} {string} {string}")
-    public void ingresarDatosCompra(String firstName, String lastName, String postalCode) {
-        cliente.attemptsTo(
-                IngresoDatos.withInformation(firstName, lastName, postalCode)
-        );
-    }
-
-    @Then("El usuario visualiza un mensaje de confirmación de compra")
-    public void verificarConfirmacion() {
-        cliente.should(
-                Ensure.that(ConfirmarMensajeFinal.value()).isTrue().toString()
-        );
-    }
-
 }

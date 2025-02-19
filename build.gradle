@@ -16,6 +16,7 @@ plugins {
 }
 
 defaultTasks 'clean','test','aggregate'
+group 'com.nttdata'
 apply plugin: 'net.serenity-bdd.serenity-gradle-plugin'
 
 group 'co.com.screenplay.project'
@@ -52,6 +53,7 @@ dependencies {
     implementation "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}"
     implementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}"
     implementation "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}"
+    implementation 'io.github.bonigarcia:webdrivermanager:5.6.3'
 
     implementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
     implementation "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
