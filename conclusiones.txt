@@ -11,15 +11,16 @@ Desafíos: Inicialmente, puede tener una curva de aprendizaje más pronunciada e
 Integración con Gradle:
 
 
-Ventajas: Gradle facilita la gestión de dependencias y la configuración del proyecto. Su uso permite automatizar el proceso de compilación, ejecución de pruebas y generación de reportes.
+Ventajas: Gradle facilita la gestión de dependencias y la configuración del proyecto. Su uso permite automatizar el proceso de compilación, ejecución de pruebas.
 
 Desafíos: Configurar correctamente Gradle con todos los plugins necesarios (como Cucumber y Serenity) puede ser complejo inicialmente.
 
 
-Uso de Gherkin y Cucumber para BDD (Behavior Driven Development):
+Uso de Gherkin, Serenity y Cucumber para BDD (Behavior Driven Development):
 
 
 Ventajas: Gherkin permite escribir tests en un lenguaje cercano al natural (inglés o español, entre otros), lo que facilita la colaboración entre equipos técnicos y no técnicos. Cucumber se encarga de ejecutar estos tests, vinculándolos con el código de prueba y generando reportes muy técnicos y gerenciales.
+Con Serenity podemos tener BDD de manera nativa y tiene mucha flexibilidad para la reutilización de código.
 
 Desafíos: La redacción de escenarios en Gherkin requiere claridad y precisión para evitar ambigüedades. Además, es importante mantener una buena organización y nomenclatura para que los escenarios sean fácilmente comprensibles y gestionables.
 
