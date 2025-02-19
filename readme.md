@@ -44,13 +44,19 @@ https://www.saucedemo.com/ que incluya:
 
 ![img_1.png](img_1.png)
 
-2.Para compilar el proyecto y preparar todo para la ejecución con las respectivas dependencias necesarias, ejecuta el comando gradle clean build. Este comando limpia cualquier compilación anterior y compila el proyecto desde cero.
-
+2.Para compilar el proyecto y preparar todo para la ejecución con las respectivas dependencias necesarias, ejecuta el comando: gradle clean build. Este comando limpia cualquier compilación anterior y compila el proyecto desde cero.
+Como solo se tiene un Runner, basta con este comando para que se ejecute el proceso.
 Se adjunta un video demostrativo de la aplicación ejecutándose:
 https://youtu.be/Ki0_k9dfaKk
 
 ## **Reportes**
-El main report de Serenity-Cucumber se genera automáticamente luego de la ejecución en el directorio: "../IdeaProjects/ChallengeQA/target/site/serenity/index.html"
+El main report de Serenity-Cucumber se genera automáticamente luego de la ejecución de la automatización en el directorio: "../IdeaProjects/ChallengeQA/target/site/serenity/index.html"
 ![img_2.png](img_2.png)
 
-En el directorio github ChallengeQA-Serenity\target\site\serenity se encuentra el histórico de reportes generados
+Adicionalmente, se puede encontrar evidencias generadas por Cucumber en la ruta target/serenity-reports, los archivos generados son:
+
+-rerun.txt: Archivo de texto con la información de la línea donde falló el caso para su revisión.
+
+-serenity-html-report.html: Reporte generado con el resultado de cada uno de los pasos del feature incluido en las pruebas.
+
+-serenity-summary.html: Este es un reporte gerencial sobre los resultados de la ejecución, se obtiene con el comando después de la ejecución de las pruebas:  gradle reports

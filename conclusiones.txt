@@ -1,0 +1,30 @@
+Las conclusiones a las que se ha llegado luego de culminar el ejercicio son:
+
+Eficiencia del Patrón Screenplay:
+
+
+Ventajas: El patrón Screenplay permite una mejor organización del código al centrarse en las interacciones de los actores con el sistema en lugar de los pasos del test. Esto facilita la reutilización de pasos y mejora la legibilidad del código, haciendo que los tests sean más mantenibles.
+
+Desafíos: Inicialmente, puede tener una curva de aprendizaje más pronunciada en comparación con los enfoques tradicionales, pero a largo plazo, la inversión en comprender este patrón generalmente se traduce en beneficios significativos en términos de escalabilidad y reutilización.
+
+
+Integración con Gradle:
+
+
+Ventajas: Gradle facilita la gestión de dependencias y la configuración del proyecto. Su uso permite automatizar el proceso de compilación, ejecución de pruebas y generación de reportes.
+
+Desafíos: Configurar correctamente Gradle con todos los plugins necesarios (como Cucumber y Serenity) puede ser complejo inicialmente.
+
+
+Uso de Gherkin y Cucumber para BDD (Behavior Driven Development):
+
+
+Ventajas: Gherkin permite escribir tests en un lenguaje cercano al natural (inglés o español, entre otros), lo que facilita la colaboración entre equipos técnicos y no técnicos. Cucumber se encarga de ejecutar estos tests, vinculándolos con el código de prueba y generando reportes muy técnicos y gerenciales.
+
+Desafíos: La redacción de escenarios en Gherkin requiere claridad y precisión para evitar ambigüedades. Además, es importante mantener una buena organización y nomenclatura para que los escenarios sean fácilmente comprensibles y gestionables.
+
+
+A manera general, puedo decir que al inicio me sentí muy frustrado por el reto de este ejercicio, ya que son algunas tecnologías que se integran
+en el proceso de testing automatizado, sin embargo, me he divertido mucho aprendiendo y resolviendo errores,
+me demoré dos días en terminar este ejercicio ya que no tenía experiencia previa, pero nunca me habio divertido tanto aprendiendo algo, así que estoy muy contento.
+Espero el ejercicio pueda estar acorde a lo que solicita el área y cualquier recomendación o crítica me gustaria saberla para mejorar y aprender más.
