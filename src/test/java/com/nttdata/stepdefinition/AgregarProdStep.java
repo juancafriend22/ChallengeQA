@@ -10,7 +10,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import net.serenitybdd.rest.Ensure;
+import net.serenitybdd.screenplay.actions.OpenPage;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.Actor;
@@ -35,6 +37,7 @@ public class AgregarProdStep {
     public void queElUsuarioNavegaALaPáginaDeInicioDeSesion() {
         cliente.can(BrowseTheWeb.with(driver));
         cliente.wasAbleTo(Navegacion.theSauceDemoPage());
+
     }
     @When("Ingresa las credenciales de acceso correctas")
     public void ingresaLasCredencialesDeAccesoCorrectas() {

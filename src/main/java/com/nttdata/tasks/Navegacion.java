@@ -3,6 +3,7 @@ import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Open;
+import net.serenitybdd.screenplay.actions.OpenPage;
 
 
 public class Navegacion implements Task {
@@ -17,3 +18,4 @@ public class Navegacion implements Task {
         return Instrumented.instanceOf(Navegacion.class).withProperties();
     }
 }
+

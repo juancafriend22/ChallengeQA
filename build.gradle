@@ -53,7 +53,8 @@ dependencies {
     implementation "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}"
     implementation "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}"
     implementation "net.serenity-bdd:serenity-screenplay-rest:${serenityCoreVersion}"
-    implementation 'io.github.bonigarcia:webdrivermanager:5.6.3'
+    implementation 'io.github.bonigarcia:webdrivermanager:5.9.1'
+
 
     implementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
     implementation "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
