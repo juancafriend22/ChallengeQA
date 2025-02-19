@@ -1,4 +1,5 @@
 package com.nttdata.tasks;
+import com.nttdata.ui.CarritoPagina;
 import com.nttdata.ui.IngresoDatosPagina;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.core.steps.Instrumented;
@@ -22,6 +23,7 @@ public class IngresoDatos implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Click.on(CarritoPagina.CHECKOUT_BUTTON),
                 Enter.theValue(firstName).into(IngresoDatosPagina.FIRST_NAME_FIELD),
                 Enter.theValue(lastName).into(IngresoDatosPagina.LAST_NAME_FIELD),
                 Enter.theValue(postalCode).into(IngresoDatosPagina.POSTAL_CODE_FIELD),

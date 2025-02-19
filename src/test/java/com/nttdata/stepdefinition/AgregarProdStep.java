@@ -1,30 +1,24 @@
 package com.nttdata.stepdefinition;
 
 import com.nttdata.questions.ConfirmarMensajeFinal;
-import com.nttdata.questions.ProductosPaginaVisibles;
 import com.nttdata.tasks.AgregarProductos;
 import com.nttdata.tasks.IngresoDatos;
 import com.nttdata.tasks.Login;
 import com.nttdata.tasks.Navegacion;
-import com.nttdata.ui.CarritoPagina;
-import com.nttdata.ui.ProductosPagina;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.serenitybdd.rest.Ensure;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.ensure.Ensure;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-import net.serenitybdd.screenplay.actions.Open;
-import net.thucydides.core.webdriver.WebDriverFacade;
-import org.junit.Test;
-import org.openqa.selenium.WebDriver;
+
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 
 public class AgregarProdStep {
     @Managed(driver = "edge")
@@ -46,9 +40,39 @@ public class AgregarProdStep {
     public void ingresaLasCredencialesDeAccesoCorrectas() {
         cliente.attemptsTo(Login.withCredentials("standard_user", "secret_sauce"));
     }
-    @Then("deberia ver el catalogo de productos")
-    public void deberiaVerElCatalogoDeProductos() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+    @When("Agrega productos al carrito de compras")
+    public void agregaProductosAlCarritoDeCompras() {
+        cliente.attemptsTo(AgregarProductos.toCart());
+    }
+
+    @And("Hace click en el boton del carrito")
+    public void haceClickEnElBotonDelCarrito() {
+        // Este paso ya está incluido en agregaProductosAlCarritoDeCompras()
+    }
+
+    @When("Hace click en el boton checkout")
+    public void haceClickEnElBotonCheckout() {
+        //Este paso se realiza en completaElFormularioConSusDatos()
+    }
+
+    @And("Completa el formulario con sus datos")
+    public void completaElFormularioConSusDatos() {
+        cliente.attemptsTo(IngresoDatos.withInformation("Juan Carlos", "Gonzalez", "256"));
+    }
+
+    @And("Hace click en el boton continue")
+    public void haceClickEnElBotonContinue() {
+        //Este paso se realiza en completaElFormularioConSusDatos()
+    }
+
+    @And("hace clic en el botón finish")
+    public void haceClicEnElBotónFinish() {
+        //Este paso se realiza en completaElFormularioConSusDatos()
+    }
+
+    @Then("visualiza el mensaje {string}")
+    public void visualizaElMensaje(String mensajeEsperado) {
+        cliente.should(seeThat(ConfirmarMensajeFinal.muestra(mensajeEsperado)));
     }
 }

@@ -6,15 +6,23 @@ import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.TextContent;
 
 public class ConfirmarMensajeFinal implements Question<Boolean> {
+    private String mensajeEsperado;
+
+    public ConfirmarMensajeFinal(String mensajeEsperado) {
+        this.mensajeEsperado = mensajeEsperado;
+    }
 
     @Override
     public Boolean answeredBy(Actor actor) {
-        String message = TextContent.of(IngresoDatosPagina.CONFIRMATION_MESSAGE).answeredBy(actor);
-        return message.contains("THANK YOU FOR YOUR ORDER");
+        String mensajeActual = TextContent.of(IngresoDatosPagina.CONFIRMATION_MESSAGE).answeredBy(actor);
+        System.out.println("Mensaje Actual: '" + mensajeActual + "'");
+        System.out.println("Mensaje Esperado: '" + mensajeEsperado + "'");
+        return mensajeActual.equals(mensajeEsperado);
     }
-
-    public static Question<Boolean> value() {
-        return new ConfirmarMensajeFinal();
+    public static Question<Boolean> muestra(String mensaje) {
+        return new ConfirmarMensajeFinal(mensaje);
     }
 
 }
+
+

@@ -12,8 +12,9 @@ public class AgregarProductos implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                Click.on(ProductosPagina.CHOMPA),
                 Click.on(ProductosPagina.CAMISETA),
-                Click.on(ProductosPagina.CHAQUETA)
+                Click.on(ProductosPagina.CART_LINK)
         );
     }
 

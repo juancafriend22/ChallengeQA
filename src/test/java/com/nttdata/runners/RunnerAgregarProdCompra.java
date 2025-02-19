@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/shop.feature",
         glue = "com.nttdata.stepdefinition",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        tags = "@InicioSesionExitoso",
+        tags = "@RealizarCompraExitosa",
         plugin = {
                 "pretty",
                 "json:target/serenity-reports/web_applications/login/cucumber.json",
