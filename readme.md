@@ -9,7 +9,7 @@ Funciones automatizadas: Carrito de compras
 
 Patrón de diseño: Screenplay
 
-Framework: gherkin, cucumber, SerenityBDD 3.3.4, selenium
+Framework: gherkin, cucumber, SerenityBDD 3.3.4
 
 Plugins adicionales: cucumber for java, Gherkin
 
