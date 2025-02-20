@@ -39,9 +39,9 @@ public class AgregarProdStep {
         cliente.wasAbleTo(Navegacion.theSauceDemoPage());
 
     }
-    @When("Ingresa las credenciales de acceso correctas")
-    public void ingresaLasCredencialesDeAccesoCorrectas() {
-        cliente.attemptsTo(Login.withCredentials("standard_user", "secret_sauce"));
+    @When("Ingresa las credenciales de acceso correctas {string} {string}")
+    public void ingresaLasCredencialesDeAccesoCorrectas(String username, String password) {
+        cliente.attemptsTo(Login.withCredentials(username,password));
     }
 
     @When("Agrega productos al carrito de compras")
@@ -59,9 +59,9 @@ public class AgregarProdStep {
         //Este paso se realiza en completaElFormularioConSusDatos()
     }
 
-    @And("Completa el formulario con sus datos")
-    public void completaElFormularioConSusDatos() {
-        cliente.attemptsTo(IngresoDatos.withInformation("Juan Carlos", "Gonzalez", "256"));
+    @And("Completa el formulario con sus datos {string} {string} {string}")
+    public void completaElFormularioConSusDatos(String firstname, String lastname,String postcode) {
+        cliente.attemptsTo(IngresoDatos.withInformation( firstname,lastname, postcode));
     }
 
     @And("Hace click en el boton continue")
@@ -78,4 +78,6 @@ public class AgregarProdStep {
     public void visualizaElMensaje(String mensajeEsperado) {
         cliente.should(seeThat(ConfirmarMensajeFinal.muestra(mensajeEsperado)));
     }
+
+
 }
